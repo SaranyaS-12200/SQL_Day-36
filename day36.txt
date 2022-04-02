@@ -1,5 +1,5 @@
 
-Exercise 1-Task
+Exercise 1-Task (SELECT queries)
 
 select * from Movies;
 1) Find the title of each film.
@@ -14,7 +14,7 @@ select * from Movies;
    select * from Movies;
 
 
-Exercise2-Tasks
+Exercise2-Tasks (Queries with constraints)
 
 1)Find the movie with a row id of 6.
   SELECT * FROM movies where id=6;
@@ -25,7 +25,7 @@ Exercise2-Tasks
 4)Find the first 5 Pixar movies and their release year .
   SELECT * FROM movies where id between 1 and 5;
 
-Exercise3-Tasks
+Exercise3-Tasks (Queries with constraints)
 
 1)Find all the Toy Story movies 
   SELECT * FROM movies where Title like "%Toy Story%";
@@ -36,7 +36,7 @@ Exercise3-Tasks
 4)Find all the WALL-* movies .
   SELECT * FROM movies where title like "%WALL%";
 
-Exercise4-Tasks
+Exercise4-Tasks (Filtering and sorting Query results)
 
 1)List all directors of Pixar movies (alphabetically), without 
 duplicates .
@@ -49,7 +49,7 @@ most recent to least).
 4)List the next five Pixar movies sorted alphabetically.
   SELECT * FROM movies order by title asc limit 5 offset 5 ;
 
-Review1-Tasks
+Review1-Tasks (Simple SELECT Queries)
 
 1)List all the Canadian cities and their populations.
   SELECT City,Population 
@@ -75,7 +75,7 @@ ORDER BY longitude ASC;
  where country = "United States"
  order by population desc limit 2 offset 2;
 
-Exercise6-Tasks
+Exercise6-Tasks (Multi-table queries with JOINs)
 
 1) Find the domestic and international sales for each movie.
   SELECT Title, Domestic_sales, International_sales
@@ -97,7 +97,7 @@ did better internationally rather than domestically
   ON movies.id = boxoffice.movie_id
   order by rating desc;
 
-Exercise7-Tasks
+Exercise7-Tasks (OUTER JOINs)
 
 1)Find the list of all buildings that have employees.
   SELECT DISTINCT Building FROM employees;
@@ -110,7 +110,7 @@ Exercise7-Tasks
   LEFT JOIN employees
   ON Buildings.building_name = Employees.building;
 
-Exercise8-Tasks
+Exercise8-Tasks (A short note on NULLs)
 
 1)Find the name and role of all employees who have not
  been assigned to a building.
@@ -123,7 +123,7 @@ Exercise8-Tasks
   ON Employees.Building=Buildings.Building_name
   where Employees.years_employed is Null;
 
-Exercise9-Tasks
+Exercise9-Tasks (Queries with expressions)
 
 1)List all movies and their combined sales in millions of dollars .
   SELECT Movies.id,Movies.Title,Boxoffice.Domestic_sales,
@@ -143,7 +143,7 @@ Exercise9-Tasks
    from Movies
    where year%2=0;
 
-Exercise10-Tasks
+Exercise10-Tasks (Queries with aggregates)
 
 1)Find the longest time that an employee has been at the studio.
   select MAX(years_employed) as LongestTime
@@ -157,7 +157,7 @@ Exercise10-Tasks
   from Employees
   group by Building;
 
-Exercise11-Tasks
+Exercise11-Tasks (Queries with aggregates)
 
 1)Find the number of Artists in the studio (without a HAVING clause.
   select count(role)as Artists from Employees 
@@ -171,7 +171,7 @@ Exercise11-Tasks
   from Employees
   where Role="Engineer";
 
-Exercise12-Tasks
+Exercise12-Tasks (Order of execution of a Query)
 
 1)Find the number of movies each director has directed.
   SELECT Director,count(director) FROM movies
@@ -184,7 +184,7 @@ Exercise12-Tasks
  ON movies.id = boxoffice.movie_id
  GROUP BY director;
 
-Exercise13-Tasks
+Exercise13-Tasks (Inserting rows)
 
 1)Add the studio's new production, Toy Story 4 to the 
   list of movies (you can use any director).
@@ -196,7 +196,7 @@ Exercise13-Tasks
   and 270 million internationally. Add the record to the BoxOffice table.
   insert into BoxOffice values(15,8.7,340000000,270000000);
 
-Exercise14-Tasks
+Exercise14-Tasks (Updating rows)
 
 1)The director for A Bug's Life is incorrect, it was actually 
   directed by John Lasseter.
@@ -214,7 +214,7 @@ Exercise14-Tasks
   SET Title = "Toy Story 3" , Director = "Lee Unkrich" 
   WHERE Id=11;
 
-Exercise15-Tasks
+Exercise15-Tasks (Deleting rows)
 
 1)This database is getting too big, lets remove all movies that were released before 2005.
   DELETE FROM Movies
@@ -223,7 +223,7 @@ Exercise15-Tasks
   DELETE FROM Movies
   WHERE Director = "Andrew Stanton";
 
-Exercise16-Tasks
+Exercise16-Tasks (Creating tables)
 
 1)Create a new table named Database with the following columns:
 – Name A string (text) describing the name of the database
@@ -235,7 +235,7 @@ Exercise16-Tasks
   Version float,
   Download_count int);
 
-Exercise17-Tasks
+Exercise17-Tasks (Altering tables)
 
 1)Add a column named Aspect_ratio with a 
  FLOAT data type to store the aspect-ratio each 
@@ -248,7 +248,7 @@ Exercise17-Tasks
  add Language Text 
  default "English";
 
-Exercise18-Tasks
+Exercise18-Tasks (Dropping tables)
 
 1)We've sadly reached the end of our lessons, 
   lets clean up by removing the Movies table.
